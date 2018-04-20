@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>PDV</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script></script>
+    <style>
+        .principal{
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+        <a class="navbar-brand" href="#">PDV - CASA DAS BOTAS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Produtos
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container principal">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                            <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1">#</span>
+                                    </div>
+                                <input type="text" class="form-control" placeholder="CÓD BARRAS" aria-label="CÓD BARRAS" aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                        <button class="input-group-text">+</button>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block">Finalizar</button>
+                            <button type="button" class="btn btn-warning btn-block">Estornar</button>
+                            <button type="button" class="btn btn-danger btn-block">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card bg-light mb-3" >
+                    <div class="card-header">Lista de produtos</div>
+                    <div class="card-body">
+                        <ol>
+                            <li>Produto Nome -- Quantidade: 2 -- R$ 123,99</li>
+                            <li>Produto Nome -- Quantidade: 2 -- R$ 123,99</li>
+                        </ol>
+                    </div>
+                    <div class="card-footer">
+                        Total a pagar:
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

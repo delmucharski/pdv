@@ -1,9 +1,8 @@
 <?php
 
-$user = "root";
-$senha = "elaborata";
+require_once "config.php";
 
-$con = new PDO('mysql:dbname=pdv;host=localhost;charset=utf8', $user, $senha);
+$con = new PDO("mysql:dbname=".DB_BASE.";host=".DB_HOST.";charset=utf8", DB_USER, DB_SENHA);
 
 $sql = "SELECT * FROM produtos";
 

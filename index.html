@@ -3,12 +3,31 @@
 <head>
     <title>PDV</title>
     <meta charset="utf8" />
-
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./web-fonts-with-css/css/fontawesome-all.css">
+    <script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.js"></script>
+    <script type="text/javascript" src="./js/produtos.js"></script>
 
     <style>
      .principal{
         margin-top: 20px;
+     }
+
+     .icone-alert{
+         color: gold;
+         font-size: xx-large;
+        
+     }
+     .produto-preco{
+         float: right;
+     }
+     #lista-produtos{
+
+     }
+     .total-pagar{
+         float: right;
      }
     </style>
 </head>
@@ -50,7 +69,7 @@
                             </div>
                         </div> <!-- fim do input-->
 
-                        <button type="button" class="btn btn-primary btn-block">Finalizar</button>
+                        <button type="button" class="btn btn-primary btn-block" id="btn-finalizar">Finalizar</button>
                         <button type="button" class="btn btn-warning btn-block">Estornar</button>
                         <button type="button" class="btn btn-danger btn-block">Cancelar</button>
 
@@ -63,20 +82,57 @@
                 <div class="card bg-light mb-3" >
                     <div class="card-header">Lista de Produtos</div>
                     <div class="card-body">
-                      <ol>
-                          <li>Produto nome -- Quant: 2 -- R$ 123,99</li>
-                          <li>Produto nome -- Quant: 2 -- R$ 123,99</li>
+                      <ol id="lista-produtos">
+                          <li>Produto nome -- Quant: 2 -- <span class="produto-preco">R$ 123,99</span></li>
+                          <li>Produto nome -- Quant: 2 -- <span class="produto-preco">R$ 123,99</span></li>
                       </ol>
                     </div>
                     <div class="card-footer">
-                        Total a Pagar: xxxx
+                        Total a Pagar: <span class="total-pagar">R$ 123,00</span>
                     </div>
                   </div>
             </div><!-- fim do card-->
 
         </div>
     </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-alerta">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Alerta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Você realmente deseja remover o produto?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                    <a href="/model/deleta-produto.php?id=3" class="btn btn-danger" id="btn-del">Sim</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-finalizar">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Finalizar Compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja encerrar a compra?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-primary" >Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>

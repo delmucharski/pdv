@@ -10,42 +10,66 @@ $(function(){
 
         var codigo = $('#btn-codigo').val();
 
-        $.getJSON('/model/carrega-produto.php',{id: codigo},function(res){
-
-            if (res==null){
-                //produto não existe
+        $.getJSON('/model/carrega-produto.php', {id: codigo}, function(res){
+            
+            if(res == null) {
+                // produto não existe
                 $('#modal-alerta').modal('show');
-                return;
+                return ;
             }
-            var li = '<li>'+res.nome+' -- '+res.marca+' -- <span class="produto-preco">'+res.preco+'</span></li>'
+
+            var li = '<li>'+ res.nome +' -- '+ res.marca +' -- <span class="produto-preco">R$ '+ res.preco +'</span></li>';
             $('#lista-produtos').append(li);
 
-            totalPagar += parseFloat(res.preco);
+            totalPagar +=  parseFloat(res.preco);
 
-            $('.total-pagar').html("R$ "+ totalPagar);
+            $('.total-pagar').html("R$ " + totalPagar);
+
             $('#btn-codigo').val('');
-        });
-    });
 
-    $('.btn-codigo').keydown(function(){
+        }); //fim do getJSON
+
+    }); //fim do click
+
+    $('#btn-codigo').keydown(function(ev){
         
-        if (ev.keycode==13){
+        if (ev.keyCode == 13){
             $('#btn-add-produto').click();
         }
-    });
+        
+    }); //fim keydown
 
     $('#modal-alerta').on('hidden.bs.modal', function(){
         $('#btn-codigo').focus();
         $('#btn-codigo').val('');
-    });
+    }); //fim modal
 
     $('#btn-finalizar').click(function(){
+
         $('#modal-finalizar').modal('show');
-    });
+
+    }); // fim click
 
     $(document).keydown(function(ev){
-        if (ev.key=='F4'){
+        if (ev.key == 'F4') {
             $('#btn-finalizar').click();
         }
-    })
+    }); // fim keydown
+
+    $('#btn-gravar-compra').click(function(){
+
+        var compra = {
+            valor: totalPagar,
+            itens: $('#lista-produtos').text()
+        };
+
+        $.post('/model/grava-compra.php', compra, function(res){
+
+            if (res == "ok") {
+                window.location.reload();
+            }
+        });
+
+    });
+
 });

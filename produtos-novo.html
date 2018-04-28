@@ -1,23 +1,22 @@
 <html>
 
 <head>
-    <title>PDV - PRODUTOS</title>
-    <meta charset="UTF-8" />
+    <title>PDV - Produto NOVO</title>
+    <meta charset="utf8" />
 
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./web-fonts-with-css/css/fontawesome-all.css">
-    <script></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="web-fonts/css/fontawesome-all.css" rel="stylesheet" />
+
     <style>
         .principal {
             margin-top: 20px;
         }
     </style>
-
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
-        <a class="navbar-brand" href="#">PDV - PRODUTOS</a>
+        <a class="navbar-brand" href="#">PDV - Casa das Butinas</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,13 +29,15 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+
             </ul>
+
         </div>
     </nav>
+
     <div class="container principal">
         <div class="row">
-
-            <div class="col-md-6 offset-md-3 ">
+            <div class="col-md-6 offset-md-3">
                 <form class="form-horizontal">
                     <fieldset>
 
@@ -45,23 +46,10 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class=" control-label" for="Nome">Nome</label>
+                            <label class=" control-label" for="nome">Nome</label>
                             <div class="">
-                                <input id="Nome" name="Nome" type="text" placeholder="Nome do produto" class="form-control input-md" required="">
+                                <input id="nome" name="nome" type="text" placeholder="" class="form-control input-md" required="">
 
-                            </div>
-                        </div>
-                        
-                        <!-- Select Basic -->
-                        <div class="form-group">
-                            <label class=" control-label" for="categoria">Categoria</label>
-                            <div class="">
-                                <select id="categoria" name="categoria" class="form-control">
-                                    <option value="Botas">Botas</option>
-                                    <option value="Sandália">Sandália</option>
-                                    <option value="Sport">Sport</option>
-                                    <option value="Chinelo">Chinelo</option>
-                                </select>
                             </div>
                         </div>
 
@@ -70,25 +58,37 @@
                             <label class=" control-label" for="marca">Marca</label>
                             <div class="">
                                 <select id="marca" name="marca" class="form-control">
-                                    <option value="Rainha">Rainha</option>
-                                    <option value="Nike">Nike</option>
-                                    <option value="Hi-Tec">Hi-Tec</option>
+                                    <option value="Caipira">Caipira</option>
+                                    <option value="DaRoça">DaRoça</option>
+                                    <option value="Nord">Nord</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class=" control-label" for="categoria">Categoria</label>
+                            <div class="">
+                                <select id="categoria" name="categoria" class="form-control">
+                                    <option value="Botas">Botas</option>
+                                    <option value="Social">Social</option>
+                                    <option value="Esporte">Esporte</option>
                                 </select>
                             </div>
                         </div>
 
                         <!-- Multiple Radios -->
                         <div class="form-group">
-                            <label class=" control-label" for="sexo">Sexo</label>
+                            <label class="control-label" for="sexo">Sexo</label>
                             <div class="">
                                 <div class="radio">
                                     <label for="sexo-0">
-                                        <input type="radio" name="sexo" id="sexo-0" value="Masc" checked="checked"> Masc
+                                        <input type="radio" name="sexo" id="sexo-0" value="Masculino" checked="checked"> Masculino
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label for="sexo-1">
-                                        <input type="radio" name="sexo" id="sexo-1" value="Fem"> Fem
+                                        <input type="radio" name="sexo" id="sexo-1" value="Feminino"> Feminino
                                     </label>
                                 </div>
                                 <div class="radio">
@@ -101,25 +101,28 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                                <label class=" control-label" for="Preço">Preço</label>
-                                <div class="">
-                                    <input id="Preço" name="Preço" type="text" placeholder="Preço" class="form-control input-md" required="">
-    
-                                </div>
+                            <label class="control-label" for="preco">Preço</label>
+                            <div class="">
+                                <input id="preco" name="preco" type="text" placeholder="" class="form-control input-md" required="">
+
                             </div>
+                        </div>
 
                         <!-- Button -->
                         <div class="form-group">
-                            <label class=" control-label" for="salvar"></label>
+                            <label class="control-label" for="salvar"></label>
                             <div class="">
-                                <button id="salvar" name="salvar" class="btn btn-primary">Cadastrar</button>
+                                <button id="salvar" name="salvar" class="btn btn-success">Salvar</button>
                             </div>
                         </div>
+
                     </fieldset>
                 </form>
+
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
